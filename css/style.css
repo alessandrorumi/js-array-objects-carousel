@@ -1,10 +1,59 @@
+/* Macro */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 18px;
+.container {
+  width: 60%;
+  height: 400px;
+  margin: 150px auto;
+  position: relative;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+
+/* Img */
+
+.active {
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrows */
+
+.previous,
+.next {
+  position: absolute;
+  font-size: 2rem;
+}
+
+.previous {
+  top: 0;
+  left: 50%;
+}
+
+.next {
+  bottom: 0;
+  left: 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+i:hover {
+  cursor: pointer;
 }
