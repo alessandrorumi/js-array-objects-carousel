@@ -37,14 +37,43 @@ const images = [
   } 
 ];
 
-// Dichiarazione .item
-const items = document.getElementsByClassName('item');
+
+const container = document.querySelector('.container');
+
+// Elementi
+images.forEach((elements, index) => {
+  let isActive = '';
+  if (index === 0) {
+    isActive = 'active';
+  }
+
+  container.innerHTML += 
+    `<div class="item ${isActive}">
+      <img src="${elements.image}" alt="">
+      <div class="description">
+        <h2>${elements.title}</h2>
+        <p>${elements.text}</p>
+      </div>
+    </div>`;
+});
+
+// Frecce
+container.innerHTML += 
+  `<div class="previous">
+      <i class="fa-solid fa-chevron-up" style="color: #ff0000;"></i>
+    </div>
+    <div class="next">
+      <i class="fa-solid fa-chevron-down" style="color: #ff0000;"></i>
+    </div>`;
 
 // Dichiarazione Arrow Down
 const arrowDown = document.querySelector('.next');
 
 // Dichiarazione Arrow Up
 const arrowUp = document.querySelector('.previous');
+
+// Dichiarazione .item
+const items = document.getElementsByClassName('item');
 
 let activeItem = 0;
 
@@ -68,8 +97,6 @@ arrowDown.addEventListener('click', function() {
 
   }
 
- 
-
 })
 
 arrowUp.addEventListener('click', function() {
@@ -92,43 +119,5 @@ arrowUp.addEventListener('click', function() {
 
   }
 
- 
-
 })
-
-const container = document.querySelector('.container');
-
-for (let i = 0; i < images.length; i++) {
-
-  let imageIndex = images[i];
-  // console.log(imageIndex);
-
-  let imagePath = imageIndex.image;
-  // console.log(imagePath);
-
-  let titleImage = imageIndex.title;
-  // console.log(titleImage);
-
-  let textImage = imageIndex.text;
-  // console.log(textImage);
-
-  // Il primo elemento ha classe .active
-  let activeClass = '';
-  if (i === 0) {
-    activeClass = 'active';
-  }
-
-  container.innerHTML += 
-  `<div class="item ${activeClass}">
-
-    <img src="${imagePath}" alt="">
-
-    <div class="description">
-      <h2>${titleImage}</h2>
-      <p>${textImage}</p>
-    </div>
-    
-  </div>`
-
-}
 
