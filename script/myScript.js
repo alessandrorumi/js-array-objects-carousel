@@ -75,3 +75,40 @@ arrowUp.addEventListener('click', function() {
   }
 
 })
+
+const container = document.querySelector('.container');
+
+for (let i = 0; i < images.length; i++) {
+
+  let imageIndex = images[i];
+  // console.log(imageIndex);
+
+  let imagePath = imageIndex.image;
+  // console.log(imagePath);
+
+  let titleImage = imageIndex.title;
+  // console.log(titleImage);
+
+  let textImage = imageIndex.text;
+  // console.log(textImage);
+
+  // Il primo elemento ha classe .active
+  let activeClass = '';
+  if (i === 0) {
+    activeClass = 'active';
+  }
+
+  container.innerHTML += 
+  `<div class="item ${activeClass}">
+
+    <img src="${imagePath}" alt="">
+
+    <div class="description">
+      <h2>${titleImage}</h2>
+      <p>${textImage}</p>
+    </div>
+    
+  </div>`
+
+}
+
