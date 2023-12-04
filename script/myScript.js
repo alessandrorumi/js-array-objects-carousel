@@ -58,7 +58,17 @@ arrowDown.addEventListener('click', function() {
 
     items[activeItem].classList.add('active');
 
+  } else if (activeItem === items.length - 1) {
+
+    items[activeItem].classList.remove('active');
+
+    activeItem = 0;
+
+    items[activeItem].classList.add('active');
+
   }
+
+ 
 
 })
 
@@ -72,7 +82,17 @@ arrowUp.addEventListener('click', function() {
   
     items[activeItem].classList.add('active');
 
+  } else if (activeItem === 0) {
+
+    items[activeItem].classList.remove('active');
+
+    activeItem = items.length - 1;
+
+    items[activeItem].classList.add('active');
+
   }
+
+ 
 
 })
 
