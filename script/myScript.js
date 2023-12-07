@@ -5,36 +5,36 @@
 // Al click dell’utente sulle frecce verso sinistra o destra, l’immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
 // Aggiungere il ciclo infinito del carosello
 
-const images = [ 
-  { 
-    image: 'img/01.webp', 
-    title: 'Marvel\'s Spiderman Miles Morale', 
-    text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.', 
-  }, 
-
-  { 
-    image: 'img/02.webp', 
-    title: 'Ratchet & Clank: Rift Apart', 
-    text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.', 
+const images = [
+  {
+    image: 'img/01.webp',
+    title: 'Marvel\'s Spiderman Miles Morale',
+    text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
   },
 
-  { 
-    image: 'img/03.webp', 
-    title: 'Fortnite', 
-    text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.", 
-  }, 
+  {
+    image: 'img/02.webp',
+    title: 'Ratchet & Clank: Rift Apart',
+    text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+  },
 
-  { 
-    image: 'img/04.webp', 
-    title: 'Stray', 
-    text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city', 
-  }, 
+  {
+    image: 'img/03.webp',
+    title: 'Fortnite',
+    text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+  },
 
-  { 
-    image: 'img/05.webp', 
-    title: "Marvel's Avengers", 
-    text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.', 
-  } 
+  {
+    image: 'img/04.webp',
+    title: 'Stray',
+    text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+  },
+
+  {
+    image: 'img/05.webp',
+    title: "Marvel's Avengers",
+    text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+  }
 ];
 
 
@@ -47,7 +47,7 @@ images.forEach((elements, index) => {
     isActive = 'active';
   }
 
-  container.innerHTML += 
+  container.innerHTML +=
     `<div class="item ${isActive}">
       <img src="${elements.image}" alt="">
       <div class="description">
@@ -56,15 +56,6 @@ images.forEach((elements, index) => {
       </div>
     </div>`;
 });
-
-// Frecce
-container.innerHTML += 
-  `<div class="previous">
-      <i class="fa-solid fa-chevron-up" style="color: #ff0000;"></i>
-    </div>
-    <div class="next">
-      <i class="fa-solid fa-chevron-down" style="color: #ff0000;"></i>
-    </div>`;
 
 // Dichiarazione Arrow Down
 const arrowDown = document.querySelector('.next');
@@ -77,7 +68,7 @@ const items = document.getElementsByClassName('item');
 
 let activeItem = 0;
 
-arrowDown.addEventListener('click', function() {
+arrowDown.addEventListener('click', function () {
 
   if (activeItem < items.length - 1) {
 
@@ -99,14 +90,14 @@ arrowDown.addEventListener('click', function() {
 
 })
 
-arrowUp.addEventListener('click', function() {
-  
+arrowUp.addEventListener('click', function () {
+
   if (activeItem > 0) {
 
     items[activeItem].classList.remove('active');
-  
+
     activeItem--;
-  
+
     items[activeItem].classList.add('active');
 
   } else if (activeItem === 0) {

@@ -43,11 +43,13 @@ img {
 .previous {
   top: 0;
   left: 50%;
+  z-index: 200;
 }
 
 .next {
   bottom: 0;
   left: 50%;
+  z-index: 200;
 }
 
 .hidden {
@@ -58,7 +60,7 @@ i:hover {
   cursor: pointer;
 }
 
-h2, 
+h2,
 p {
   color: white;
   text-align: end;
